@@ -13,6 +13,11 @@ def calculate(arg):
             arg1 = stack.pop()
             result = arg1 - arg2
             stack.append(result)
+        elif token == '^':
+            arg2 = stack.pop()
+            arg1 = stack.pop()
+            result = arg1**arg2
+            stack.append(result)
         else:
             stack.append(int(token))
 
@@ -23,4 +28,4 @@ def calculate(arg):
 
 def main():
     while True:
-        calculate(input("rpn calc> "))
+        calculate(input('rpn calc> '))
